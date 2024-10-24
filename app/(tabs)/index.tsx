@@ -10,6 +10,9 @@ export default function HomeScreen() {
       case 'ZEPTO':
         navigation.navigate(links.ZEPTO_LOGIN)
         break;
+      case 'Swiggy_Login_Page':
+        navigation.navigate(links.SWIGGY_LOGIN_PAGE)
+        break
       default:
         Alert.alert(`You pressed on ${item.key}`);
     }
@@ -19,7 +22,7 @@ export default function HomeScreen() {
       <FlatList
         data={[
           { key: 'ZEPTO' },
-          { key: 'Dan' },
+          { key: 'Swiggy_Login_Page' },
           { key: 'Dominic' },
           { key: 'Jackson' },
           { key: 'James' },

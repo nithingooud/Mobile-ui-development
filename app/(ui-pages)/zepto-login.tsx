@@ -8,19 +8,15 @@ const ZeptoLoginComponent = () => {
     const [text, onChangeText] = useState('');
 
     return (
-        <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+        <ImageBackground source={image} style={styles.image}>
             <View style={styles.container}>
                 <View>
-                    <Image
-                        style={styles.tinyLogo}
-                        source={{ uri: 'https://res.cloudinary.com/nithinmanda/image/upload/v1729524257/zepto-removebg-preview_ljtaiy.png' }}
-                    />
+                    <Image style={styles.tinyLogo} source={{ uri: 'https://res.cloudinary.com/nithinmanda/image/upload/v1729524257/zepto-removebg-preview_ljtaiy.png' }} />
                     <View style={styles.groceries}>
                         <Text style={styles.text}>
                             Groceries Delivered in 10 Minutes
                         </Text>
-                    </View>
-                    <View >
+                    </View><View >
                         <TextInput
                             style={styles.input}
                             onChangeText={onChangeText}
@@ -38,7 +34,6 @@ const ZeptoLoginComponent = () => {
                         <Text style={styles.orangeColor}>Terms of Use</Text>
                         <Text style={styles.whiteColor}> & </Text>
                         <Text style={styles.orangeColor}>Privacy Policy</Text>
-
                     </View>
                 </View>
             </View>
