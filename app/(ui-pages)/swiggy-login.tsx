@@ -1,3 +1,4 @@
+import { Ionicons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import { View, Text, StyleSheet, ImageBackground, Image, TextInput } from "react-native"
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
@@ -9,84 +10,89 @@ const SwiggyLoginComponent = () => {
     const [text, onChangeText] = useState('');
 
     return (
-        <SafeAreaProvider>
-            <SafeAreaView>
-                <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-                    <View style={styles.container}>
-                        <View>
-                            <Image
-                                style={styles.tinyLogo}
-                                source={{ uri: 'https://res.cloudinary.com/nithinmanda/image/upload/v1729524257/zepto-removebg-preview_ljtaiy.png' }}
-                            />
-                            <View style={styles.groceries}>
-                                <Text style={styles.text}>
-                                    Groceries Delivered in 10 Minutes
-                                </Text>
-                            </View>
-                            <View >
-                                <TextInput
-                                    style={styles.input}
-                                    onChangeText={onChangeText}
-                                    value={text}
-                                    placeholder="Enter Phone Number"
-                                />
-                            </View>
-                            <View style={styles.button}>
-                                <Text style={{ color: 'white' }}>Continue</Text>
-                            </View>
-                        </View>
-                        <View style={styles.footer}>
-                            <Text style={styles.whiteColor}>By continuing, you agree to our</Text>
-                            <View style={styles.bottomView}>
-                                <Text style={styles.orangeColor}>Terms of Use</Text>
-                                <Text style={styles.whiteColor}> & </Text>
-                                <Text style={styles.orangeColor}>Privacy Policy</Text>
-
-                            </View>
-                        </View>
-                    </View>
-                </ImageBackground>
-
-            </SafeAreaView>
-        </SafeAreaProvider>
+        <View>
+            <Image style={styles.zomatoImage} source={{ uri: 'https://res.cloudinary.com/nithinmanda/image/upload/v1729741267/WhatsApp_Image_2024-10-24_at_9.10.02_AM_uqijwp.jpg' }} />
+            <View style={styles.Viewtext1}>
+                <Text style={styles.text1}>
+                    India's #1 Food Delivery
+                </Text>
+                <Text style={styles.text1}>
+                    and Dining App
+                </Text>
+            </View>
+            <View style={styles.text2View}>
+                <View style={styles.horizontalLine} />
+                <View>
+                    <Text style={styles.text2}> Log in or sign up</Text>
+                </View>
+                <View style={styles.horizontalLine} />
+            </View>
+            <View style={styles.inputsView}>
+                <View style={styles.inputs}>
+                    <Image source={require('../../assets/images/flag.png')} style={{ height: 20 }} />
+                    <Ionicons name="caret-down" color={'#808080'}></Ionicons>
+                </View>
+                <View style={styles.inputs}>
+                    <Ionicons name="add" color={'black'}></Ionicons>
+                    <Text>91 </Text>
+                    <Text>Enter Phone Number</Text>
+                </View>
+            </View>
 
 
+
+        </View >
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'space-between'
+
+    zomatoImage: {
+        width: '100%',
+        height: 300,
+        objectFit: 'cover'
     },
-    tinyLogo: {
-        width: 200,
-        height: 80,
-        marginTop: 100
-    },
-    image: {
-        flex: 1,
-        // objectFit: 'fill'
-    },
-    text: {
-        color: 'white',
-        fontSize: 30,
-        lineHeight: 40,
+    text1: {
+        color: 'black',
+        fontSize: 25,
         display: 'flex',
-        fontFamily: 'Poppins',
+        fontFamily: 'sans-serif',
         fontWeight: '700'
     },
-    groceries: {
-        marginLeft: 30,
-        width: 200
+    Viewtext1: {
+        marginTop: 20,
+        alignItems: 'center'
     },
-    input: {
-        height: 20,
-        marginHorizontal: 30,
-        padding: 20,
+    text2View: {
+        marginTop: 50,
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'row',
+        marginHorizontal: 50,
+    },
+    text2: {
+        width: 130, textAlign: 'center',
+        color: 'black', fontFamily: 'SpaceMono'
+    },
+    horizontalLine: {
+        flex: 1, height: 1, backgroundColor: 'grey'
+    },
+    inputsView: {
+        flex: 1,
+        flexDirection: 'row',
+        marginHorizontal: 50,
+        marginVertical: 15,
+        gap: 10
+    },
+    inputs: {
+        height: 35,
+        flexGrow: 1,
         backgroundColor: 'white',
-        borderRadius: 30,
-        marginTop: 20
+        borderRadius: 10,
+        borderColor: 'black',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row'
     },
     button: {
         marginHorizontal: 30,
